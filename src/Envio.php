@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Interact;
+namespace Craos\Email;
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
