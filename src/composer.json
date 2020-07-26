@@ -1,0 +1,52 @@
+{
+  "name": "craos/email",
+  "description": "Processamento de emails e traking",
+  "keywords": [
+    "Emails",
+    "PHPSendMail",
+    "craos",
+    "oberdanbrito"
+  ],
+  "homepage": "https://github.com/OberdanBrito/qg.email",
+  "type": "library",
+  "license": "LGPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Oberdan Brito",
+      "email": "oberdan@craos.net",
+      "homepage": "https://craos.net"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "phpmailer/phpmailer": "6.1.*"
+  },
+  "require-dev": {
+  },
+  "suggest": {
+  },
+  "autoload": {
+    "psr-4": {
+      "craos\\": "src/"
+    }
+  },
+  "autoload-dev": {
+  },
+  "provide": {
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "2.x-dev"
+    }
+  },
+  "scripts": {
+    "lint": [
+    ],
+    "test": [
+    ]
+  },
+  "config": {
+    "sort-packages": true,
+    "platform-check": false
+  }
+}
