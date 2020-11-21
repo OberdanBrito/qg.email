@@ -42,9 +42,11 @@ class Envio
             $this->mail->SMTPOptions = array(
                 'ssl' => array(
                     'peer_name' => $this->conta->Smtp_host,
-                    'verify_peer' => false,
-                    'verify_peer_name' => false,
-                    'allow_self_signed' => true
+                    'verify_peer' => true,
+                    'verify_peer_name' => true,
+                    'allow_self_signed' => true,
+                    'verify_depth' => 3,
+                    'cafile' => 'ca-cert.pem',
                 )
             );
 
