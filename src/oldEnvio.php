@@ -9,7 +9,7 @@ use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php';
 
-class Envio
+class oldEnvio
 {
     private $config;
     private $log;
