@@ -17,4 +17,4 @@ $conta = (object)array(
     'dominio' => 'animaclube.com.br'
 );
 
-$email->setConta($conta);
+$email->setParametrosCorrespondente($conta);
