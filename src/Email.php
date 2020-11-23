@@ -11,6 +11,7 @@ class Email
 {
     private PHPMailer $mail;
     private $conta;
+    private $mensagem;
 
     public function __construct()
     {
@@ -30,7 +31,7 @@ class Email
 
     }
 
-    public function Configurar() {
+    public function MontaConfiguracoes() {
         $this->ConfigurarConta();
         $this->ConfigurarCabecalho();
         $this->ConfigurarSSL();
@@ -42,8 +43,21 @@ class Email
     public function setParametrosCorrespondente($conta): void
     {
         $this->conta = $conta;
-        $this->Configurar();
+        $this->MontaConfiguracoes();
 
+    }
+    
+    public function setMensagem($mensagem): void 
+    {
+        $this->mensagem = $mensagem;
+        $this->MontaMensagem();
+    }
+
+    public function setDestinatario($Endereco, $Nome) {
+        try {
+            $this->mail->addAddress($Endereco, $Nome);
+        } catch (Exception $e) {
+        }
     }
 
     private function ConfigurarConta()
@@ -92,6 +106,17 @@ class Email
         $this->mail->DKIM_extraHeaders = ['List-Unsubscribe', 'List-Help'];
     }
 
+    private function MontaMensagem()
+    {
+        try {
+            $this->mail->isHTML(true);
+            $this->mail->Subject = utf8_decode($this->mensagem->assunto);
+            $this->mail->Body = utf8_decode($this->mensagem->corpo);
+            $this->mail->send();
+        } catch (Exception $e) {
+            error_log($e->getMessage());
+        }
+    }
 
 
 }
